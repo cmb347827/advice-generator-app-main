@@ -1,0 +1,146 @@
+
+@import 'custom.scss';
+@import '_globals.scss';
+
+$colors: (
+  Light Cyan: hsl(193, 38%, 86%),
+  Neon Green: hsl(150, 100%, 66%),
+  Grayish Blue: hsl(217, 19%, 38%),
+  Dark Grayish Blue: hsl(217, 19%, 24%),
+  Dark Blue: hsl(218, 23%, 16%),
+);
+$fallback-colors: (
+  #00FFFF #33FF33 #009999 #336666 #003333
+);
+
+@mixin background($url,$position:auto,$size:auto,$repeat:no-repeat,$fixed:fixed,$color:white){
+    background: url($url) $position/$size $repeat $fixed $color; 
+}
+@mixin font-color($color, $fallback-color) {
+  color: $fallback-color;
+  color: $color;
+}
+
+@mixin bg-color($color, $fallback-color) {
+  background-color: $fallback-color;
+  background-color: $color;
+}
+
+@mixin width($grid-size) {
+  width: $grid-size * 1px;
+}
+@mixin max-width($grid-size) {
+  max-width: $grid-size * 1px;
+}
+@mixin min-width($grid-size) {
+  min-width: $grid-size * 1px;
+}
+@mixin border-radius($radius...) {
+  border-radius: $radius;
+}
+@mixin margin($args...) {
+  margin: $args;
+}
+@mixin padding($args...) {
+  padding: $args;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  @include bg-color(map-get($colors,Dark Blue),nth($fallback-colors,5));
+}
+
+
+main.container {
+    @include bg-color(map-get($colors,Dark Blue),nth($fallback-colors,5));
+    @include width($container__form-xs);
+	height: 100%;
+	margin-top: 100px;
+	font{
+     size: $font_size-16;
+     weight: $font_weight-normal;
+	 family: 'Manrope', sans-serif;
+    }
+    .card{
+	   @include border-radius(15px);
+	   @include bg-color(map-get($colors,Grayish Blue),nth($fallback-colors,3));
+     .card-body{
+	   font-size: $font_size-28;
+	   @include padding(10px);
+	   @include font-color(map-get($colors,Light Cyan),nth($fallback-colors,1));
+	   @include border-radius(15px);
+	   @include bg-color(map-get($colors,Grayish Blue),nth($fallback-colors,3));
+	   height: 500px;
+	   .card-title{
+	      @include font-color(map-get($colors,Neon Green),nth($fallback-colors,2));
+	   }
+	   .pattern{
+		  .filter{
+			  filter: invert(93%) sepia(15%) saturate(213%) hue-rotate(149deg) brightness(94%) contrast(94%); 
+		      rect{
+			    filter: invert(93%) sepia(15%) saturate(213%) hue-rotate(149deg) brightness(94%) contrast(94%); 
+			  }
+		  }
+		  
+	      #mobile{
+	         display:inline-block;
+	      }
+          #desktop{
+             display:none;
+          }	
+	      @media screen and(min-width:$container__form-xxl * 1px){
+		     #mobile{
+	            display:none;
+	         }
+             #desktop{
+                display:inline-block;
+             }	
+	      }
+	   }
+	   #dice{
+		  min-width: 100px;
+		  min-height: 100px;
+		  border:none;
+		  @include border-radius(50%);
+		  @include bg-color(map-get($colors,Neon Green),nth($fallback-colors,2));
+		  position:relative;
+		  top: 50px;
+		  &:hover{
+		     box-shadow: 0 0 20px hsl(150, 100%, 66%);
+		  }
+		  @media screen and(min-with:$container__form-xxl * 1px){
+		     top:40px;
+		  }
+	   }
+	   @media screen and(min-width:$container__form-xxl * 1px){
+	      height: 400px;
+	   }
+	}
+	}
+    @media screen and (min-width: $container__form-xxl * 1px) {
+       min-width: 650px;
+	   @include padding(50px); 
+	   
+    }
+  
+}
+
+footer {
+  .attribution {
+    font-size: $font_size-8;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/yxgKFKLM/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='advice-generator-app-main.css' type='text/css'>
+  <title>Frontend Mentor | Advice generator app</title>
+
+  
+</head>
+<body dir='ltr'>
+       <main class='container'>
+		  <section class='row p-0'>
+		     <div class="col card p-0" >
+                <div class="card-body p-0 d-flex flex-column align-items-center justify-content-around">
+                   <h1 class="card-title">Advice # <span id='adviceId'></span></h1>
+                   <p id='adviceText' class="card-text text-center ">Advice Text</p>
+				   <div class='pattern'>
+				      <div id='desktop' class='filter'>
+					    <svg width="444" height="16" xmlns="http://www.w3.org/2000/svg">
+						  <g fill="none" fill-rule="evenodd"><path fill="#4F5D74" d="M0 8h196v1H0zM248 8h196v1H248z"/>
+						  <g transform="translate(212)" fill="#CEE3E9"><rect width="6" height="16" rx="3"/><rect x="14" width="6" height="16" rx="3"/>
+						  </g></g>
+						</svg>
+					  </div>
+					  <div id='mobile' class='filter'>
+					    <svg width="295" height="16" xmlns="http://www.w3.org/2000/svg">
+					      <g fill="none" fill-rule="evenodd"><path fill="#4F5D74" d="M0 8h122v1H0zM173 8h122v1H173z"/>
+						  </g>
+						  <g transform="translate(138)" fill="#CEE3E9"><rect width="6" height="16" rx="3"/><rect x="14" width="6" height="16" rx="3"/>
+						  </g>
+					    </svg>
+					  </div>
+                   </div>
+				   <button aria-label='Next Advice.' id='dice' >
+				     <img src='./images/icon-dice.svg' alt='' width="24" height="24">
+				   </button>
+                </div>
+             </div>
+		  </section>
+           
+       </main>
+       <footer>
+	         <div class="attribution mt-5">
+                  <span class='me-2'>Challenge by</span><address><a class='me-2' href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a></address>
+                  <span class='me-2'>Coded by</span><address><a href="https://www.frontendmentor.io/profile/cmb347827">CMB</a></address>
+             </div>
+	   </footer>	
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous"></script>
+      <script src='json-functions.js'></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	  <script src='advice-generator-app-main.js'></script>
+  
+</body>
+</html>
