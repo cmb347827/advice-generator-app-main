@@ -14,7 +14,9 @@ const onClick = (selector, handler) => {
 };
 
 const displayWhere = ['#adviceId','#adviceText'];
-const urlStart='https://api.adviceslip.com/advice/117';
+
+const urlStart='https://api.adviceslip.com/advice/search/action';
+//const urlStart='https://api.adviceslip.com/advice/117';
 const url= 'https://api.adviceslip.com/advice';
 
 $(window).on('load',function(){

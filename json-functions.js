@@ -14,11 +14,19 @@ function getJson(url,displaywhere,callback) {
 }
 
 function displayAdvice(data,displayWhere){
+	
 	for(const key in data) {
-       if(data.hasOwnProperty(key)) {
-          const value = data[key];
-          document.querySelector(displayWhere[0]).textContent=`${value.id}`;
-		  document.querySelector(displayWhere[1]).textContent=`" ${value.advice}"`;
+       if(data.hasOwnProperty(key) && (key==='slip'||key==='slips')) {
+		  if(key==='slips'){
+			 Object.values(data[key]).forEach((entry) => {
+				 document.querySelector(displayWhere[0]).textContent=`${entry.id}`;
+		         document.querySelector(displayWhere[1]).textContent=`" ${entry.advice}"`;
+			 });
+		  }else{
+             const value = data[key];
+             document.querySelector(displayWhere[0]).textContent=`${value.id}`;
+		     document.querySelector(displayWhere[1]).textContent=`" ${value.advice}"`;
+		  }
        }
     }
 	
